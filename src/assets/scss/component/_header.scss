@@ -1,0 +1,43 @@
+// abstracts
+@use "@style/abstracts/variables" as *;
+@use "@style/abstracts/mixin" as mix;
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 9rem;
+    margin: 0 auto;
+    padding: 0 8rem;
+  }
+  &__txt {
+    @include mix.en-18($weight: 600);
+  }
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  position: relative;
+
+  &__btn {
+    @include mix.en-18();
+  }
+  &__line {
+    display: block;
+    width: 9.8rem;
+    height: 3.5rem;
+    border-radius: 4rem;
+    border: 1px solid $color-dark-1;
+    position: absolute;
+    top: calc(50% - 1.8rem);
+    z-index: -1;
+  }
+}

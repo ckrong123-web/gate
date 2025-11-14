@@ -1,0 +1,24 @@
+@use "@style/abstracts/variables" as *;
+
+// 폰트
+@mixin en-18($color: $color-dark-1, $weight: 400) {
+  font-family: "Montserrat";
+  font-weight: $weight;
+  font-size: 1.8rem;
+  color: $color;
+}
+
+// 폰트
+@mixin kr-20($color: $color-dark-1, $weight: 400) {
+  font-weight: $weight;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+  color: $color;
+}
+
+@mixin kr-18($color: $color-dark-1, $weight: 400, $spacing: -0.04em) {
+  font-weight: $weight;
+  font-size: 1.8rem;
+  letter-spacing: $spacing;
+  color: $color;
+}
