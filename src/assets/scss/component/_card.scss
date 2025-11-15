@@ -1,0 +1,101 @@
+// abstracts
+@use "@style/abstracts/variables" as *;
+@use "@style/abstracts/mixin" as mix;
+
+// card
+.card {
+  padding-top: 6rem;
+  &__wrap {
+    position: relative;
+  }
+  &__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    position: absolute;
+    top: -6rem;
+    pointer-events: none;
+  }
+  &__num {
+    margin-top: 1.8rem;
+    margin-right: 4rem;
+    @include mix.en-20($weight: 500);
+  }
+  &__tit {
+    font-family: "Montserrat", "Pretendard";
+    font-size: 5.4rem;
+    line-height: 6rem;
+    font-weight: 500;
+    color: $color-dark-1;
+  }
+  &__ico-box {
+    display: inline-block;
+    margin-left: 2rem;
+    width: 3rem;
+    transform: translateY(-0.5rem);
+  }
+  &__ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3rem;
+    height: 3rem;
+  }
+
+  &__img-box {
+    width: 100%;
+    aspect-ratio: 36 / 23;
+    position: relative;
+    &:hover .card__arrow {
+      opacity: 0.75;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 2.8rem;
+    right: 2.8rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    padding: 1.7rem;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.25) 20%,
+      rgba(255, 255, 255, 0)
+    );
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.2s ease-in;
+    opacity: 0;
+  }
+  &__arrow-ico {
+    rotate: 90deg;
+    opacity: 0.85;
+  }
+
+  &__txt-box {
+    margin-top: 2rem;
+  }
+
+  &__txt-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+  }
+  &__tag,
+  &__year {
+    @include mix.en-20($weight: 500);
+  }
+  &__desc {
+    @include mix.kr-18();
+    line-height: 2.8rem;
+  }
+}

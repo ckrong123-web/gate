@@ -8,6 +8,21 @@
   color: $color;
 }
 
+@mixin en-20($color: $color-dark-1, $weight: 400) {
+  font-family: "Montserrat";
+  font-weight: $weight;
+  font-size: 2rem;
+  color: $color;
+}
+
+@mixin en-60($color: $color-dark-1, $weight: 600, $spacing: 0) {
+  font-family: "Montserrat";
+  font-weight: $weight;
+  font-size: 6rem;
+  color: $color;
+  letter-spacing: $spacing;
+}
+
 // 폰트
 @mixin kr-20($color: $color-dark-1, $weight: 400) {
   font-weight: $weight;

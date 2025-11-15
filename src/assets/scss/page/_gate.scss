@@ -5,39 +5,35 @@
 // 메인
 .main {
   &__wrap {
-    // border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
     &::before {
       content: "";
       display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 55rem;
-      height: 55rem;
-      background-image: url("@/assets/img/main_round_top.png");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      width: 17.6rem;
+      height: 17.6rem;
+      background-color: $color-point-1;
+      filter: blur(20rem);
+      top: -8.8rem;
+      left: -8.8rem;
       z-index: -1;
     }
     &::after {
       content: "";
       display: block;
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 67rem;
-      height: 62.6rem;
-      background-image: url("@/assets/img/main_round_bottom.png");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      width: 17.6rem;
+      height: 17.6rem;
+      background-color: $color-point-1;
+      filter: blur(20rem);
+      bottom: -8.6rem;
+      right: -8.6rem;
       z-index: -1;
     }
   }
@@ -188,6 +184,7 @@
     left: 0;
     opacity: 0.3;
     transform: translate(-3%, -8%);
+    pointer-events: none;
     path {
       stroke-dasharray: 3000;
       stroke-dashoffset: -3000;
@@ -230,32 +227,27 @@
     margin-left: -5rem;
     margin-bottom: 4.8rem;
     position: relative;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-image: url("@/assets/img/roundtxt.png");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: rotate 9s linear infinite;
-      @keyframes rotate {
-        to {
-          rotate: 360deg;
-        }
-      }
-    }
   }
 
   &__ico {
     width: 4rem;
     height: 4rem;
     margin: 4rem;
+  }
+  &__round {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 9s linear infinite;
+    @keyframes rotate {
+      to {
+        rotate: 360deg;
+      }
+    }
   }
 
   &__right {
@@ -319,10 +311,7 @@
   flex-basis: 50%;
 
   &__tit {
-    font-family: "Montserrat";
-    font-weight: 600;
-    font-size: 2rem;
-    color: $color-dark-1;
+    @include mix.en-20($weight: 600);
   }
   &__list {
     margin-top: 3rem;
@@ -363,5 +352,317 @@
     font-size: 1.6rem;
     letter-spacing: -0.04em;
     color: $color-dark-1;
+  }
+}
+
+// skill
+
+.skill {
+  height: 200vh;
+  background-color: $color-light-1;
+  &__wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: clip;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 20vh;
+      background-image: linear-gradient(#f7f8f9, transparent);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 20vh;
+      background-image: linear-gradient(transparent, #f7f8f9);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.skill-list {
+  height: 100%;
+  width: 150rem;
+  height: 150rem;
+  position: absolute;
+  right: calc(50% + 21rem);
+  top: calc(50% - 75rem);
+  border-radius: 50%;
+  border: 1px solid $color-dark-1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: calc(100% - 10rem);
+    height: calc(100% - 10rem);
+    border-radius: 50%;
+    border: 1px solid $color-dark-1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    // z-index: -1;
+  }
+
+  &__tit {
+    font-family: "Montserrat";
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: $color-dark-1;
+    position: absolute;
+    top: 50%;
+    right: 10rem;
+    transform: translateY(-50%);
+  }
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+
+  &__item {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform-origin: -75rem;
+
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        transform: translate(100%, -50%) rotate(#{($i - 1) * 10deg});
+      }
+    }
+  }
+}
+
+.skill-item {
+  margin-left: -2.45rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0.3;
+  transition: 0.3s ease;
+
+  &--active {
+    opacity: 1;
+
+    .skill-item__box {
+      opacity: 1;
+    }
+  }
+
+  &__ico {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &__num {
+    margin: 0 12.4rem 0 3rem;
+    @include mix.en-60($spacing: -0.04em);
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+  }
+
+  &__img-cont {
+    height: 6.4rem;
+    margin-right: 4.4rem;
+  }
+
+  &__img {
+    width: fit-content;
+    height: 100%;
+  }
+
+  &__txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.7rem;
+    transition: 0.3s ease;
+  }
+
+  &__sub {
+    @include mix.en-20();
+  }
+
+  &__tit {
+    @include mix.en-60();
+  }
+}
+
+// work
+.work {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 16rem 0;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -15rem;
+    top: -15rem;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: $color-point-1;
+    filter: blur(20rem);
+  }
+
+  &__wrap {
+    width: calc(100% - 3.2rem);
+    max-width: 140rem;
+    margin: 0 auto;
+    padding-top: 14rem;
+  }
+}
+
+.work-slide {
+  overflow: visible;
+  display: flex;
+  align-items: stretch;
+
+  &__item {
+    max-width: 72rem;
+    &.swiper-slide-active .work-slide__card {
+      .card__tit,
+      .card__desc {
+        transition-delay: 0.3s;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__card {
+    .card__tit {
+      transition: 0.45s ease-in;
+      opacity: 0;
+    }
+    .card__desc {
+      transition: 0.3s ease-in;
+      opacity: 0;
+    }
+  }
+}
+
+// contact
+.contact {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__line {
+    width: 110%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    transform: translate(-3%, -16%);
+    pointer-events: none;
+    path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: -3000;
+      animation: draw 1.8s ease forwards;
+    }
+  }
+  &__tit {
+    width: 100%;
+    background-color: $color-point-1;
+    position: relative;
+    z-index: 1;
+    padding: 20rem 0 8rem;
+  }
+  &__tit-txt {
+    display: flex;
+    align-items: flex-end;
+    width: calc(100% - 3.2rem);
+    max-width: 140rem;
+    margin: 0 auto;
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 12rem;
+    color: #ffffff;
+  }
+  &__tit-ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 4rem;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 10rem;
+    height: 5rem;
+    margin-top: -5rem;
+    border-radius: 10rem 10rem 0 0;
+    background-color: #ffffff;
+    z-index: 1;
+  }
+  &__button-ico {
+    width: 2rem;
+  }
+  &__info {
+    width: calc(100% - 3.2rem);
+    max-width: 140rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7.8rem 0 5.7rem;
+  }
+  &__name {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 4.2rem;
+    color: $color-dark-1;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+    margin: 4rem 0 4.5rem;
+  }
+  &__item {
+    @include mix.kr-18();
+    line-height: 1;
+  }
+  &__copy {
+    font-size: 1.4rem;
+    color: $color-dark-1;
+    opacity: 0.5;
   }
 }

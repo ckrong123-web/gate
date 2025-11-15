@@ -14,7 +14,9 @@
     "locomotive-scroll": "^4.1.4",
     "node-sass": "^9.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.30.2",
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
