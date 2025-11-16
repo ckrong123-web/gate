@@ -29,14 +29,18 @@ export default function Card({
           </span>
         </div>
         <div className="card__img-box">
-          <a href={href}>
-            <img src={img} alt={`${tit} 이미지`} className="card__img" />
+          {href ? (
+            <a href={href}>
+              <img src={img} alt={`${tit} 이미지`} className="card__img" />
 
-            <span className="card__arrow">
-              <ArrowIco className="card__arrow-ico" />
-              <span className="hidden">링크로 이동</span>
-            </span>
-          </a>
+              <span className="card__arrow">
+                <ArrowIco className="card__arrow-ico" />
+                <span className="hidden">링크로 이동</span>
+              </span>
+            </a>
+          ) : (
+            <img src={img} alt={`${tit} 이미지`} className="card__img" />
+          )}
         </div>
         <div className="card__txt-box">
           <div className="card__txt-top">

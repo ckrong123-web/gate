@@ -1,9 +1,9 @@
 import { SparkleIco, ArrowIco } from "@/icon";
 import Line from "@/assets/img/line.svg?react";
 
-export default function Contact() {
+export default function Contact({ ref, clickEvt }) {
   return (
-    <section className="contact">
+    <section className="contact" ref={ref}>
       <div className="contact__wrap">
         <div className="contact__tit">
           <span className="contact__line">
@@ -14,7 +14,12 @@ export default function Contact() {
             <SparkleIco color="ffffff" className="contact__tit-ico" />
           </span>
         </div>
-        <button className="contact__button">
+        <button
+          className="contact__button"
+          onClick={() => {
+            clickEvt();
+          }}
+        >
           <ArrowIco className="contact__button-ico" />
           <span className="hidden">go top</span>
         </button>

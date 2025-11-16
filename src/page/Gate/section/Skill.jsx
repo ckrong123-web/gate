@@ -1,10 +1,10 @@
 import { SparkleIco } from "@/icon";
 import cn from "classnames";
 
-export default function Skill({ data }) {
+export default function Skill({ data, ref }) {
   const active = 0;
   return (
-    <section className="skill">
+    <section className="skill" ref={ref}>
       <div className="skill__wrap">
         <div className="skill-list">
           <strong className="skill-list__tit">Skill</strong>

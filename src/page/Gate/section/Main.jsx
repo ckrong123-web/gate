@@ -1,12 +1,12 @@
 import { SparkleIco } from "@/icon";
 
-export default function Main() {
+export default function Main({ ref }) {
   // 년도
   const date = new Date();
   const thisYear = date.getFullYear();
 
   return (
-    <section className="main">
+    <section className="main" ref={ref}>
       <div className="main__wrap">
         <div className="main__cont">
           <div className="main__top">

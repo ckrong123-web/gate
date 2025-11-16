@@ -19,6 +19,9 @@
   &__txt {
     @include mix.en-18($weight: 600);
   }
+  &__list {
+    position: relative;
+  }
 }
 
 .header-list {
@@ -27,8 +30,18 @@
   gap: 8rem;
   position: relative;
 
+  &__item {
+    display: flex;
+    justify-content: center;
+    width: 8.8rem;
+  }
   &__btn {
     @include mix.en-18();
+    transition: 0.2s ease;
+
+    &:hover {
+      color: $color-point-1;
+    }
   }
   &__line {
     display: block;
@@ -39,5 +52,7 @@
     position: absolute;
     top: calc(50% - 1.8rem);
     z-index: -1;
+    transform: translateX(-0.5rem);
+    transition: 0.3s ease;
   }
 }

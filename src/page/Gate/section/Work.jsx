@@ -4,9 +4,9 @@ import "swiper/css";
 
 import { Card } from "@/component";
 
-export default function Work({ data }) {
+export default function Work({ data, ref }) {
   return (
-    <section className="work">
+    <section className="work" ref={ref}>
       <div className="work__wrap">
         <Swiper
           className="work-slide"

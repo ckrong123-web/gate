@@ -4,9 +4,9 @@ import cn from "classnames";
 import Line from "@/assets/img/line.svg?react";
 import Round from "@/assets/img/roundTxt.svg?react";
 
-export default function About({ data }) {
+export default function About({ data, ref }) {
   return (
-    <section className="about">
+    <section className="about" ref={ref}>
       <div className="about__wrap">
         <span className="about__line">
           <Line style={{ color: "0980e3" }} />
