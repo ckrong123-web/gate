@@ -1,6 +1,7 @@
+import { forwardRef } from "react";
 import { SparkleIco } from "@/icon";
 
-export default function Main({ ref }) {
+const Main = forwardRef((props, ref) => {
   // 년도
   const date = new Date();
   const thisYear = date.getFullYear();
@@ -37,4 +38,6 @@ export default function Main({ ref }) {
       </div>
     </section>
   );
-}
+});
+
+export default Main;

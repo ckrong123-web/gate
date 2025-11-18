@@ -150,14 +150,16 @@ function Gate() {
   };
 
   return (
-    <>
-      <Header data={headerData} activeIndex={activeIndex} clickEvt={scrTo} />
-      <Main ref={(sec) => setRef(sec, 0)} />
-      <About data={aboutData} ref={(sec) => setRef(sec, 1)} />
-      <Skill data={skillData} ref={(sec) => setRef(sec, 2)} />
-      <Work data={workData} ref={(sec) => setRef(sec, 3)} />
-      <Contact ref={(sec) => setRef(sec, 4)} clickEvt={() => scrTo(0)} />
-    </>
+    <div className="wrapper">
+      <div className="container">
+        <Header data={headerData} activeIndex={activeIndex} clickEvt={scrTo} />
+        <Main ref={(sec) => setRef(sec, 0)} />
+        <About data={aboutData} ref={(sec) => setRef(sec, 1)} />
+        <Skill data={skillData} ref={(sec) => setRef(sec, 2)} />
+        <Work data={workData} ref={(sec) => setRef(sec, 3)} />
+        <Contact ref={(sec) => setRef(sec, 4)} clickEvt={() => scrTo(0)} />
+      </div>
+    </div>
   );
 }
 

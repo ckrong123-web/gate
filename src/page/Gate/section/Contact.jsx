@@ -1,7 +1,8 @@
+import { forwardRef } from "react";
 import { SparkleIco, ArrowIco } from "@/icon";
 import Line from "@/assets/img/line.svg?react";
 
-export default function Contact({ ref, clickEvt }) {
+const Contact = forwardRef((props, ref) => {
   return (
     <section className="contact" ref={ref}>
       <div className="contact__wrap">
@@ -17,7 +18,7 @@ export default function Contact({ ref, clickEvt }) {
         <button
           className="contact__button"
           onClick={() => {
-            clickEvt();
+            props.clickEvt();
           }}
         >
           <ArrowIco className="contact__button-ico" />
@@ -44,4 +45,6 @@ export default function Contact({ ref, clickEvt }) {
       </div>
     </section>
   );
-}
+});
+
+export default Contact;

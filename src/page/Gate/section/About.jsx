@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import { SparkleIco } from "@/icon";
 import cn from "classnames";
 
 import Line from "@/assets/img/line.svg?react";
 import Round from "@/assets/img/roundTxt.svg?react";
 
-export default function About({ data, ref }) {
+const About = forwardRef((props, ref) => {
   return (
     <section className="about" ref={ref}>
       <div className="about__wrap">
@@ -40,7 +41,7 @@ export default function About({ data, ref }) {
             </div>
           </div>
           <div className="about-bottom">
-            {data.map((item, num) => {
+            {props.data.map((item, num) => {
               return (
                 <div className="about-group" key={num}>
                   <strong className="about-group__tit">{item.tit}</strong>
@@ -84,4 +85,6 @@ export default function About({ data, ref }) {
       </div>
     </section>
   );
-}
+});
+
+export default About;

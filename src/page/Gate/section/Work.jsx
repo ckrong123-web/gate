@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 
 import { Card } from "@/component";
 
-export default function Work({ data, ref }) {
+const Work = forwardRef((props, ref) => {
   return (
     <section className="work" ref={ref}>
       <div className="work__wrap">
@@ -16,7 +17,7 @@ export default function Work({ data, ref }) {
           mousewheel={{ sensitivity: 3, releaseOnEdges: true }}
           modules={[Mousewheel]}
         >
-          {data.map((item, num) => {
+          {props.data.map((item, num) => {
             return (
               <SwiperSlide className="work-slide__item" key={num}>
                 <Card
@@ -36,4 +37,6 @@ export default function Work({ data, ref }) {
       </div>
     </section>
   );
-}
+});
+
+export default Work;
