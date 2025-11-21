@@ -62,6 +62,20 @@
     height: 5rem;
     transform: translateY(1.5rem);
   }
+  @include mix.respond-to("tablet") {
+    &__top,
+    &__bottom {
+      padding: 0 3.5rem 0 4rem;
+    }
+    &__tit {
+      margin: 2rem 0 1.8rem 3rem;
+    }
+    &__tit-ico {
+      width: 3.3rem;
+      height: 3.3rem;
+      transform: translateY(-1.5rem);
+    }
+  }
 }
 
 .main-top {
@@ -80,45 +94,70 @@
   line-height: 14.5rem;
   color: $color-dark-1;
   z-index: 1;
-  &--o {
+
+  @mixin tit-point($margin-r, $text) {
     display: inline-block;
     font-family: "Motesia";
     font-weight: 400;
     font-size: 30rem;
     line-height: 0;
-    letter-spacing: -100%;
     color: transparent;
     position: relative;
-    margin-right: -4.2rem;
+    margin-right: $margin-r;
     &::after {
-      content: "o";
+      content: $text;
       display: inline-block;
       color: $color-point-1;
       z-index: 2;
       position: absolute;
       left: 0;
       top: 0;
+    }
+    @include mix.respond-to("tablet") {
+      font-size: 20rem;
+      margin-right: calc($margin-r * 2 / 3);
+    }
+  }
+
+  &--o {
+    @include tit-point(-4.2rem, "o");
+    & {
+      animation: textAni-o 1s ease-in-out forwards;
+      @keyframes textAni-o {
+        from {
+          filter: blur(1.5rem);
+          opacity: 0.1;
+          transform: translateY(-0.1em);
+        }
+        to {
+          filter: blur(0);
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
   }
   &--f {
-    display: inline-block;
-    font-family: "Motesia";
-    font-weight: 400;
-    font-size: 30rem;
-    line-height: 0;
-    letter-spacing: -100%;
-    color: transparent;
-    position: relative;
-    margin-right: -3rem;
-    &::after {
-      content: "f";
-      display: inline-block;
-      color: $color-point-1;
-      z-index: 2;
-      position: absolute;
-      left: 0;
-      top: 0;
+    @include tit-point(-3rem, "f");
+    & {
+      animation: textAni-f 0.9s ease-in-out forwards;
+      @keyframes textAni-f {
+        from {
+          filter: blur(1.5rem);
+          opacity: 0.1;
+          transform: translateY(0.1em);
+        }
+        to {
+          filter: blur(0);
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
+  }
+
+  @include mix.respond-to("tablet") {
+    font-size: 12rem;
   }
 }
 
@@ -130,22 +169,50 @@
   &__num {
     display: inline-flex;
     align-items: center;
+    position: relative;
     @include mix.en-18();
 
-    &:first-of-type::after {
-      content: "";
-      display: block;
-      width: 10rem;
-      height: 1px;
-      margin: 0 2rem;
-      background-color: $color-dark-1;
+    &:first-of-type {
+      margin-right: 14rem;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 10rem;
+        height: 1px;
+        position: absolute;
+        right: -7rem;
+        top: 50%;
+        transform: translate(50%, -50%);
+        background-color: $color-dark-1;
+        animation: year-line 1s ease forwards;
+        @keyframes year-line {
+          from {
+            width: 0;
+          }
+
+          40% {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include mix.respond-to("tablet") {
+    margin-top: 0.2rem;
+    &__num:first-of-type::after {
+      width: 4.6rem;
+      margin: 0 1.8rem;
     }
   }
 }
 
 .main-name {
   display: inline-flex;
+  justify-content: flex-end;
   align-items: center;
+  position: relative;
   color: $color-dark-1;
 
   &__pct {
@@ -160,6 +227,85 @@
     font-weight: 400;
     font-size: 3.2rem;
     font-style: italic;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      display: block;
+      width: calc(100% - 6rem);
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      right: 3rem;
+      background-color: #fff;
+      transform: translateY(-50%);
+      animation: name-txt 0.7s 0.4s linear forwards;
+      @keyframes name-txt {
+        to {
+          width: 0;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 60%;
+      position: absolute;
+      top: 55%;
+      left: 3rem;
+      background-color: $color-dark-1;
+      transform: translateY(-50%);
+      opacity: 0;
+      animation: name-txt-line 0.7s 0.4s linear forwards;
+      @keyframes name-txt-line {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        20% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        40% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0;
+        }
+        90% {
+          opacity: 1;
+        }
+        to {
+          left: calc(100% - 3rem);
+          opacity: 0;
+        }
+      }
+    }
+  }
+  @include mix.respond-to("tablet") {
+    &__pct {
+      font-size: 4rem;
+      margin: 0 0.65rem;
+    }
+    &__txt {
+      font-size: 2.8rem;
+    }
   }
 }
 
@@ -199,7 +345,7 @@
   }
 
   &__cont {
-    width: calc(100% - 3.2rem);
+    width: calc(100% - 4rem);
     margin: 0 auto;
     max-width: 140rem;
   }
@@ -530,7 +676,7 @@
   }
 
   &__wrap {
-    width: calc(100% - 3.2rem);
+    width: calc(100% - 4rem);
     max-width: 140rem;
     margin: 0 auto;
     padding-top: 14rem;
@@ -601,7 +747,7 @@
   &__tit-txt {
     display: flex;
     align-items: flex-end;
-    width: calc(100% - 3.2rem);
+    width: calc(100% - 4rem);
     max-width: 140rem;
     margin: 0 auto;
     font-family: "Montserrat";
@@ -633,7 +779,7 @@
     width: 2rem;
   }
   &__info {
-    width: calc(100% - 3.2rem);
+    width: calc(100% - 4rem);
     max-width: 140rem;
     margin: 0 auto;
     display: flex;

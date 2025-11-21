@@ -13,4 +13,7 @@ export default defineConfig({
     },
     extensions: [".js", ".jsx"],
   },
+  css: {
+    devSourcemap: true,
+  },
 });

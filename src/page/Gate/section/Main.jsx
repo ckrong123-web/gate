@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { SparkleIco } from "@/icon";
+import cn from "classnames";
 
 const Main = forwardRef((props, ref) => {
   // 년도
@@ -7,7 +8,7 @@ const Main = forwardRef((props, ref) => {
   const thisYear = date.getFullYear();
 
   return (
-    <section className="main" ref={ref}>
+    <section className={cn("main", props.className)} ref={ref}>
       <div className="main__wrap">
         <div className="main__cont">
           <div className="main__top">

@@ -2,12 +2,13 @@ import { forwardRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
+import cn from "classnames";
 
 import { Card } from "@/component";
 
 const Work = forwardRef((props, ref) => {
   return (
-    <section className="work" ref={ref}>
+    <section className={cn("work", props.className)} ref={ref}>
       <div className="work__wrap">
         <Swiper
           className="work-slide"

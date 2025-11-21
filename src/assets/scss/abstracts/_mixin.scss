@@ -1,6 +1,36 @@
 @use "@style/abstracts/variables" as *;
+@use "sass:map";
 
-// 폰트
+// 반응형
+$breakpoint: (
+  "mobile-small": 320px,
+  "mobile": 900px,
+  "tablet": 1200px,
+);
+
+@mixin respond-to($name) {
+  @if $name == "mobile-small" {
+    @media (max-width: map.get($breakpoint, "mobile-small")) {
+      @content;
+    }
+  } @else if $name == "mobile" {
+    $min: map.get($breakpoint, "mobile-small") + 1px;
+    @media (min-width:#{$min}) and (max-width: map.get($breakpoint, "mobile")) {
+      @content;
+    }
+  } @else if $name == "tablet" {
+    $min: map.get($breakpoint, "mobile") + 1px;
+    @media (min-width:#{$min}) and (max-width: map.get($breakpoint, "tablet")) {
+      @content;
+    }
+  } @else if $name == "pc" {
+    @media (min-width:#{ map.get($breakpoint, "tablet") + 1px}) {
+      @content;
+    }
+  }
+}
+
+// 영문 폰트
 @mixin en-18($color: $color-dark-1, $weight: 400) {
   font-family: "Montserrat";
   font-weight: $weight;
@@ -23,7 +53,7 @@
   letter-spacing: $spacing;
 }
 
-// 폰트
+// 한글 폰트
 @mixin kr-20($color: $color-dark-1, $weight: 400) {
   font-weight: $weight;
   font-size: 2rem;

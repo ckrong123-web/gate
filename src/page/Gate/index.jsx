@@ -153,11 +153,30 @@ function Gate() {
     <div className="wrapper">
       <div className="container">
         <Header data={headerData} activeIndex={activeIndex} clickEvt={scrTo} />
-        <Main ref={(sec) => setRef(sec, 0)} />
-        <About data={aboutData} ref={(sec) => setRef(sec, 1)} />
-        <Skill data={skillData} ref={(sec) => setRef(sec, 2)} />
-        <Work data={workData} ref={(sec) => setRef(sec, 3)} />
-        <Contact ref={(sec) => setRef(sec, 4)} clickEvt={() => scrTo(0)} />
+        <Main
+          ref={(sec) => setRef(sec, 0)}
+          className={activeIndex === 0 && "active"}
+        />
+        <About
+          data={aboutData}
+          ref={(sec) => setRef(sec, 1)}
+          className={activeIndex === 1 && "active"}
+        />
+        <Skill
+          data={skillData}
+          ref={(sec) => setRef(sec, 2)}
+          className={activeIndex === 2 && "active"}
+        />
+        <Work
+          data={workData}
+          ref={(sec) => setRef(sec, 3)}
+          className={activeIndex === 3 && "active"}
+        />
+        <Contact
+          ref={(sec) => setRef(sec, 4)}
+          clickEvt={() => scrTo(0)}
+          className={activeIndex === 4 && "active"}
+        />
       </div>
     </div>
   );

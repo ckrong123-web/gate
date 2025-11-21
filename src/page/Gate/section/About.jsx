@@ -7,7 +7,7 @@ import Round from "@/assets/img/roundTxt.svg?react";
 
 const About = forwardRef((props, ref) => {
   return (
-    <section className="about" ref={ref}>
+    <section className={cn("about", props.className)} ref={ref}>
       <div className="about__wrap">
         <span className="about__line">
           <Line style={{ color: "0980e3" }} />

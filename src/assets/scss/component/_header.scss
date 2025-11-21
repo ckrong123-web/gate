@@ -22,6 +22,17 @@
   &__list {
     position: relative;
   }
+  @include mix.respond-to("tablet") {
+    &__wrap {
+      padding: 0 4rem;
+    }
+  }
+  @include mix.respond-to("mobile") {
+    &__wrap {
+      min-height: 5.8em;
+      padding: 0 2rem;
+    }
+  }
 }
 
 .header-list {
@@ -54,5 +65,96 @@
     z-index: -1;
     transform: translateX(-0.5rem);
     transition: 0.3s ease;
+  }
+  &__hamburger {
+    // border: 1px solid red;
+    width: 2.8rem;
+    height: 2.8rem;
+    &::after {
+      content: "";
+      display: block;
+      width: 2.4rem;
+      height: 0.2rem;
+      background-color: $color-dark-1;
+      position: absolute;
+      top: 0.4rem;
+      left: calc(50% - 1.2rem);
+      transform-origin: center;
+      transition: 0.3s ease;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 2.4rem;
+      height: 0.2rem;
+      background-color: $color-dark-1;
+      position: absolute;
+      top: 2.2rem;
+      left: calc(50% - 1.2rem);
+      transform-origin: center;
+      transition: 0.3s ease;
+    }
+    &--open {
+      &::after {
+        transform: rotate(135deg);
+        top: 1.2rem;
+      }
+      &::before {
+        transform: rotate(-135deg);
+        top: 1.2rem;
+      }
+      .header-list__hamburger-line {
+        width: 0;
+        transform: translateX(1.2rem);
+      }
+    }
+  }
+  &__hamburger-line {
+    display: block;
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: $color-dark-1;
+    position: absolute;
+    top: 1.2rem;
+    left: calc(50% - 1.2rem);
+    transition: 0.3s ease;
+    transform-origin: center;
+  }
+  @include mix.respond-to("tablet") {
+    gap: 4rem;
+  }
+  @include mix.respond-to("mobile") {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.4rem;
+    padding: 1.6rem 2rem;
+    align-items: flex-start;
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    transform: translate(0, 100%);
+    // background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #fff;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.55) 20%,
+      rgba(255, 255, 255, 0.9)
+    );
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.2);
+
+    &__item {
+      justify-content: flex-start;
+      width: 100%;
+    }
+    &__item--active {
+      .header-list__btn {
+        color: $color-point-1;
+      }
+    }
+    &__btn {
+      width: 100%;
+      text-align: left;
+    }
   }
 }

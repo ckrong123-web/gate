@@ -1,10 +1,11 @@
 import { forwardRef } from "react";
 import { SparkleIco, ArrowIco } from "@/icon";
 import Line from "@/assets/img/line.svg?react";
+import cn from "classnames";
 
 const Contact = forwardRef((props, ref) => {
   return (
-    <section className="contact" ref={ref}>
+    <section className={cn("contact", props.className)} ref={ref}>
       <div className="contact__wrap">
         <div className="contact__tit">
           <span className="contact__line">

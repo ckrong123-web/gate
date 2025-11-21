@@ -14,10 +14,11 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "locomotive-scroll": "^4.1.4",
+    "motion": "^12.23.24",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-responsive": "^10.0.1",
     "react-router-dom": "^6.30.2",
-    "sass": "^1.94.1",
     "swiper": "^12.0.3"
   },
   "devDependencies": {
@@ -33,6 +34,7 @@
     "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
     "prettier": "3.5.3",
+    "sass": "^1.94.2",
     "sass-embedded": "^1.85.1",
     "vite": "^6.2.0",
     "vite-plugin-svgr": "^4.5.0"
