@@ -12,7 +12,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "classnames": "^2.5.1",
+    "gsap": "^3.13.0",
     "locomotive-scroll": "^4.1.4",
     "motion": "^12.23.24",
     "react": "^18.3.1",

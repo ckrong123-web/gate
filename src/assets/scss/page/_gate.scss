@@ -328,7 +328,7 @@
     z-index: -1;
     top: 0;
     left: 0;
-    opacity: 0.3;
+    opacity: 0;
     transform: translate(-3%, -8%);
     pointer-events: none;
     path {
@@ -348,6 +348,17 @@
     width: calc(100% - 4rem);
     margin: 0 auto;
     max-width: 140rem;
+  }
+
+  &.active {
+    .about__line {
+      opacity: 0.3;
+      path {
+        stroke-dasharray: 3000;
+        stroke-dashoffset: -3000;
+        animation: draw 1.8s ease forwards;
+      }
+    }
   }
 }
 

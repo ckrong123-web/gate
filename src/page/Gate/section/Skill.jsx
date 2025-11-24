@@ -1,13 +1,45 @@
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { forwardRef } from "react";
 import { SparkleIco } from "@/icon";
 import cn from "classnames";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Skill = forwardRef((props, ref) => {
   const active = 0;
+
+  const listRef = useRef(null);
+  const wrapRef = useRef(null);
+  // const tl = useRef(null);
+
+  useGSAP(() => {
+    const length = props.data.length; // 예: 5
+    const step = 1 / length;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: listRef.current,
+      },
+    });
+
+    props.data.forEach((_, index) => {
+      tl.to(listRef.current, { rotate: -10 * length }, step * index);
+    });
+    // .to(listRef.current, { rotate: -10 });
+  });
+
+  console.log(props.data, props.data.length);
   return (
     <section className={cn("skill", props.className)} ref={ref}>
-      <div className="skill__wrap">
-        <div className="skill-list">
+      <div className="skill__wrap" ref={wrapRef}>
+        <div className="skill-list" ref={listRef}>
           <strong className="skill-list__tit">Skill</strong>
           <ul className="skill-list__list">
             {props.data.map((item, num) => {
