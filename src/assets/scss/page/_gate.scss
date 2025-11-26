@@ -515,9 +515,12 @@
 // skill
 
 .skill {
-  height: 200vh;
-  background-color: $color-light-1;
   &__wrap {
+    height: 350vh;
+    background-color: $color-light-1;
+  }
+
+  &__sticky {
     position: sticky;
     top: 0;
     height: 100vh;
