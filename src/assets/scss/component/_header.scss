@@ -50,8 +50,10 @@
     @include mix.en-18();
     transition: 0.2s ease;
 
-    &:hover {
-      color: $color-point-1;
+    @include mix.respond-to("pc") {
+      &:hover {
+        color: $color-point-1;
+      }
     }
   }
   &__line {

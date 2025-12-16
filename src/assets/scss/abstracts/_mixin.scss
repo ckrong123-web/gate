@@ -15,7 +15,7 @@ $breakpoint: (
     }
   } @else if $name == "mobile" {
     $min: map.get($breakpoint, "mobile-small") + 1px;
-    @media (min-width:#{$min}) and (max-width: map.get($breakpoint, "mobile")) {
+    @media (max-width: map.get($breakpoint, "mobile")) {
       @content;
     }
   } @else if $name == "tablet" {
@@ -36,6 +36,9 @@ $breakpoint: (
   font-weight: $weight;
   font-size: 1.8rem;
   color: $color;
+  @include respond-to("mobile") {
+    font-size: 1.4rem;
+  }
 }
 
 @mixin en-20($color: $color-dark-1, $weight: 400) {

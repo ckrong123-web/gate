@@ -4,9 +4,12 @@ import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import cn from "classnames";
 
+import useDeviceBreakpoint from "@/hook/useDeviceBreakpoint";
+
 import { Card } from "@/component";
 
 const Work = forwardRef((props, ref) => {
+  const { isPc } = useDeviceBreakpoint();
   return (
     <section className={cn("work", props.className)} ref={ref}>
       <div className="work__wrap">
@@ -15,8 +18,8 @@ const Work = forwardRef((props, ref) => {
           slidesPerView={"auto"}
           spaceBetween={40}
           direction={"horizontal"}
-          mousewheel={{ sensitivity: 3, releaseOnEdges: true }}
-          modules={[Mousewheel]}
+          mousewheel={isPc && { sensitivity: 3, releaseOnEdges: true }}
+          modules={isPc && [Mousewheel]}
         >
           {props.data.map((item, num) => {
             return (

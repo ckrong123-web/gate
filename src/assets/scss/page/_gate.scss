@@ -76,6 +76,36 @@
       transform: translateY(-1.5rem);
     }
   }
+  @include mix.respond-to("mobile") {
+    &__wrap {
+      &::before {
+        width: 8rem;
+        height: 8rem;
+        top: -4rem;
+        left: -3rem;
+        filter: blur(10rem);
+      }
+      &::after {
+        width: 8rem;
+        height: 8rem;
+        bottom: -4rem;
+        right: -3rem;
+        filter: blur(10rem);
+      }
+    }
+    &__top,
+    &__bottom {
+      padding: 0 2.5rem 0 2.5rem;
+    }
+    &__tit {
+      margin: 1.5rem 0 1.2rem 2rem;
+    }
+    &__tit-ico {
+      width: 2.5rem;
+      height: 2.5rem;
+      transform: translateY(-3rem);
+    }
+  }
 }
 
 .main-top {
@@ -116,6 +146,10 @@
     @include mix.respond-to("tablet") {
       font-size: 20rem;
       margin-right: calc($margin-r * 2 / 3);
+    }
+    @include mix.respond-to("mobile") {
+      font-size: 10rem;
+      margin-right: calc($margin-r / 3);
     }
   }
 
@@ -159,6 +193,9 @@
   @include mix.respond-to("tablet") {
     font-size: 12rem;
   }
+  @include mix.respond-to("mobile") {
+    font-size: 6.6rem;
+  }
 }
 
 .main-year {
@@ -201,9 +238,24 @@
 
   @include mix.respond-to("tablet") {
     margin-top: 0.2rem;
-    &__num:first-of-type::after {
-      width: 4.6rem;
-      margin: 0 1.8rem;
+    &__num:first-of-type {
+      margin-right: 8.6rem;
+      &::after {
+        width: 4.6rem;
+        margin: 0 1.8rem;
+        right: -6rem;
+      }
+    }
+  }
+  @include mix.respond-to("mobile") {
+    margin-top: 0.2rem;
+    &__num:first-of-type {
+      margin-right: 4rem;
+      &::after {
+        width: 3rem;
+        margin: 0 0.5rem;
+        right: -2.5rem;
+      }
     }
   }
 }
@@ -307,6 +359,16 @@
       font-size: 2.8rem;
     }
   }
+  @include mix.respond-to("mobile") {
+    &__pct {
+      font-size: 2.5rem;
+      margin: 0 0.4rem;
+    }
+    &__txt {
+      margin-top: 0.1rem;
+      font-size: 1.6rem;
+    }
+  }
 }
 
 // about
@@ -334,18 +396,11 @@
     path {
       stroke-dasharray: 3000;
       stroke-dashoffset: -3000;
-      animation: draw 1.8s ease forwards;
-    }
-
-    @keyframes draw {
-      to {
-        stroke-dashoffset: 0;
-      }
     }
   }
 
   &__cont {
-    width: calc(100% - 4rem);
+    width: calc(100% - 16rem);
     margin: 0 auto;
     max-width: 140rem;
   }
@@ -354,9 +409,7 @@
     .about__line {
       opacity: 0.3;
       path {
-        stroke-dasharray: 3000;
-        stroke-dashoffset: -3000;
-        animation: draw 1.8s ease forwards;
+        animation: draw 2.5s ease-in 0.5s forwards;
       }
     }
   }
@@ -460,6 +513,7 @@
 
 .about-bottom {
   display: flex;
+  gap: 2rem;
   min-height: 50vh;
   padding: 6rem 0 14rem;
 }
@@ -664,6 +718,14 @@
   &__tit {
     @include mix.en-60();
   }
+  @include mix.respond-to("tablet") {
+    .skill-item__num {
+      margin: 0 8rem 0 3rem;
+    }
+    .skill-item__img-cont {
+      margin-right: 2.8rem;
+    }
+  }
 }
 
 // work
@@ -690,10 +752,15 @@
   }
 
   &__wrap {
-    width: calc(100% - 4rem);
+    width: calc(100% - 16rem);
     max-width: 140rem;
     margin: 0 auto;
     padding-top: 14rem;
+  }
+  @include mix.respond-to("tablet") {
+    .work__wrap {
+      padding-top: 0;
+    }
   }
 }
 
@@ -748,7 +815,6 @@
     path {
       stroke-dasharray: 3000;
       stroke-dashoffset: -3000;
-      animation: draw 1.8s ease forwards;
     }
   }
   &__tit {
@@ -761,7 +827,7 @@
   &__tit-txt {
     display: flex;
     align-items: flex-end;
-    width: calc(100% - 4rem);
+    width: calc(100% - 16rem);
     max-width: 140rem;
     margin: 0 auto;
     font-family: "Montserrat";
@@ -788,12 +854,13 @@
     border-radius: 10rem 10rem 0 0;
     background-color: #ffffff;
     z-index: 1;
+    transform: translateY(1px);
   }
   &__button-ico {
     width: 2rem;
   }
   &__info {
-    width: calc(100% - 4rem);
+    width: calc(100% - 16rem);
     max-width: 140rem;
     margin: 0 auto;
     display: flex;
@@ -824,5 +891,19 @@
     font-size: 1.4rem;
     color: $color-dark-1;
     opacity: 0.5;
+  }
+  &.active {
+    .contact__line path {
+      animation: draw 2.5s ease-in 0.5s forwards;
+    }
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: -3000;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
