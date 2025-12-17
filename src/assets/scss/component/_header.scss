@@ -47,8 +47,8 @@
     width: 8.8rem;
   }
   &__btn {
-    @include mix.en-18();
     transition: 0.2s ease;
+    @include mix.en-18();
 
     @include mix.respond-to("pc") {
       &:hover {

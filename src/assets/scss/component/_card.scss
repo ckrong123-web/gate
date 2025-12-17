@@ -95,7 +95,7 @@
     @include mix.en-20($weight: 500);
   }
   &__desc {
-    @include mix.kr-18();
     line-height: 2.8rem;
+    @include mix.kr-18();
   }
 }

@@ -54,6 +54,9 @@ $breakpoint: (
   font-size: 6rem;
   color: $color;
   letter-spacing: $spacing;
+  @include respond-to("mobile") {
+    font-size: 3.2rem;
+  }
 }
 
 // 한글 폰트
@@ -62,6 +65,9 @@ $breakpoint: (
   font-size: 2rem;
   letter-spacing: -0.04em;
   color: $color;
+  @include respond-to("mobile") {
+    font-size: 1.6rem;
+  }
 }
 
 @mixin kr-18($color: $color-dark-1, $weight: 400, $spacing: -0.04em) {
@@ -69,4 +75,7 @@ $breakpoint: (
   font-size: 1.8rem;
   letter-spacing: $spacing;
   color: $color;
+  @include respond-to("mobile") {
+    font-size: 1.4rem;
+  }
 }
