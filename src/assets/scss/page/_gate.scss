@@ -686,11 +686,16 @@
       left: 0;
       z-index: 1;
     }
+    @include mix.respond-to("mobile") {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
   }
 }
 
 .skill-list {
-  height: 100%;
   width: 150rem;
   height: 150rem;
   position: absolute;
@@ -741,6 +746,20 @@
       &:nth-of-type(#{$i}) {
         transform: translate(100%, -50%) rotate(#{($i - 1) * 10deg});
       }
+    }
+  }
+  @include mix.respond-to("mobile") {
+    right: calc(50% + 14rem);
+    top: calc(50% - 75rem);
+    &::before {
+      width: calc(100% - 3.4rem);
+      height: calc(100% - 3.4rem);
+    }
+    &__tit {
+      font-size: 1.6rem;
+      right: 2rem;
+      top: 42rem;
+      transform: translateX(100%);
     }
   }
 }
@@ -811,6 +830,26 @@
       margin-right: 2.8rem;
     }
   }
+  @include mix.respond-to("mobile") {
+    margin-left: -1.4rem;
+    &__ico {
+      width: 3rem;
+      height: 3rem;
+    }
+    &__num {
+      margin: 0 3rem 0 1rem;
+    }
+    &__img-cont {
+      height: 3.8rem;
+      margin-right: 1.4rem;
+    }
+    &__txt {
+      gap: 1rem;
+    }
+    &__tit {
+      font-size: 3rem;
+    }
+  }
 }
 
 // work
@@ -822,7 +861,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 16rem 0;
+  padding: 7rem 0;
   &::before {
     content: "";
     display: block;
@@ -840,11 +879,27 @@
     width: calc(100% - 16rem);
     max-width: 140rem;
     margin: 0 auto;
-    padding-top: 14rem;
+    padding-top: 8vh;
   }
   @include mix.respond-to("tablet") {
     .work__wrap {
       padding-top: 0;
+    }
+  }
+  @include mix.respond-to("mobile") {
+    min-height: 0;
+
+    &::before {
+      left: -7.5rem;
+      top: -7.5rem;
+      width: 15rem;
+      height: 15rem;
+      filter: blur(15rem);
+    }
+
+    &__wrap {
+      width: calc(100% - 4rem);
+      padding-top: 8%;
     }
   }
 }
@@ -980,6 +1035,40 @@
   &.active {
     .contact__line path {
       animation: draw 2.5s ease-in 0.5s forwards;
+    }
+  }
+  @include mix.respond-to("mobile") {
+    &__line {
+      width: 180%;
+      transform: translate(-2%, -8%);
+    }
+    &__tit {
+      padding: 10rem 0 4rem;
+    }
+    &__tit-txt {
+      width: calc(100% - 4rem);
+      font-size: 6rem;
+    }
+    &__tit-ico {
+      line-height: 2rem;
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.4rem;
+    }
+    &__button {
+      width: 5rem;
+      height: 2.5rem;
+      margin-top: -2.5rem;
+    }
+    &__button-ico {
+      width: 1.2rem;
+    }
+    &__info {
+      width: calc(100% - 4rem);
+    }
+    &__list {
+      gap: 1rem;
+      margin: 3rem 0 3.5rem;
     }
   }
 }

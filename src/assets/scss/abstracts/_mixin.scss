@@ -46,6 +46,9 @@ $breakpoint: (
   font-weight: $weight;
   font-size: 2rem;
   color: $color;
+  @include respond-to("mobile") {
+    font-size: 1.6rem;
+  }
 }
 
 @mixin en-60($color: $color-dark-1, $weight: 600, $spacing: 0) {
