@@ -152,7 +152,12 @@ function Gate() {
   return (
     <div className="wrapper">
       <div className="container">
-        <Header data={headerData} activeIndex={activeIndex} clickEvt={scrTo} />
+        <Header
+          data={headerData}
+          activeIndex={activeIndex}
+          clickEvt={scrTo}
+          scrollHeader
+        />
         <Main
           ref={(sec) => setRef(sec, 0)}
           className={activeIndex === 0 && "active"}

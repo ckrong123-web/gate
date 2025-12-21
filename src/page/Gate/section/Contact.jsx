@@ -33,10 +33,12 @@ const Contact = forwardRef((props, ref) => {
               <a href="mailto:ckrong123@naver.com">ckrong123@naver.com</a>
             </li>
             <li className="contact__item">
-              <a href="">블로그링크</a>
+              <a href="">React 가이드</a>
             </li>
             <li className="contact__item">
-              <a href="">깃링크</a>
+              <a href="https://github.com/ckrong123-web?tab=repositories">
+                GitHub
+              </a>
             </li>
           </ul>
           <span className="contact__copy">

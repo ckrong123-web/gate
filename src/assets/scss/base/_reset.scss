@@ -1,3 +1,5 @@
+@use "@style/abstracts/mixin" as mix;
+
 html,
 body,
 div,
@@ -88,6 +90,9 @@ video {
 }
 html {
   font-size: 62.5%;
+  @include mix.respond-to("mobile-small") {
+    font-size: 3vw;
+  }
 }
 /* HTML5 display-role reset for older browsers */
 article,

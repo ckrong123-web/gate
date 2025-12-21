@@ -37,7 +37,6 @@ const Skill = forwardRef((props, ref) => {
     });
   });
 
-  console.log(props.data, props.data.length);
   return (
     <section className={cn("skill", props.className)} ref={ref}>
       <div className="skill__wrap" ref={wrapRef}>

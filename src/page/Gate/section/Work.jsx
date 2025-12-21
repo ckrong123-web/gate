@@ -1,8 +1,10 @@
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import cn from "classnames";
+import { ArrowIco } from "@/icon";
 
 import useDeviceBreakpoint from "@/hook/useDeviceBreakpoint";
 
@@ -37,6 +39,15 @@ const Work = forwardRef((props, ref) => {
               </SwiperSlide>
             );
           })}
+
+          <SwiperSlide className="work-slide__item">
+            <div className="work-slide__link">
+              <Link to="/work" className="work-slide__link-wrap">
+                More Project
+                <ArrowIco className="work-slide__ico" />
+              </Link>
+            </div>
+          </SwiperSlide>
         </Swiper>
       </div>
     </section>

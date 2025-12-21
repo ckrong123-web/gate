@@ -1,0 +1,28 @@
+// abstracts
+@use "@style/abstracts/variables" as *;
+@use "@style/abstracts/mixin" as mix;
+
+.header-work {
+  .header-list__item {
+    width: auto;
+  }
+}
+
+.workpage {
+  width: calc(100% - 16rem);
+  padding: 14rem 0;
+  margin: 0 auto;
+  max-width: 140rem;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2rem;
+  }
+  @include mix.respond-to("mobile") {
+    width: calc(100% - 4rem);
+    padding: 7rem 0;
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

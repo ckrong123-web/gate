@@ -1,15 +1,22 @@
 import { Routes, Route } from "react-router-dom";
 import Gate from "@/page/Gate";
+import Work from "@/page/Work";
+import PopupProvider from "@/context/PopupProvider";
+import { PopupRoot } from "@/layout";
 
 function App() {
   return (
-    <div className="wrapper">
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Gate />} />
-        </Routes>
+    <PopupProvider>
+      <div className="wrapper">
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Gate />} />
+            <Route path="/work" element={<Work />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+      <PopupRoot />
+    </PopupProvider>
   );
 }
 
