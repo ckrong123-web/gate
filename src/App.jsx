@@ -11,8 +11,8 @@ function App() {
       <div className="wrapper">
         <div className="container">
           <Routes>
-            <Route path="/" element={<Gate />} />
-            <Route path="/work" element={<Work />} />
+            <Route path="/gate" element={<Gate />} />
+            <Route path="/gate/work" element={<Work />} />
           </Routes>
         </div>
       </div>

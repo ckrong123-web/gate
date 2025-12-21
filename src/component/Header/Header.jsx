@@ -42,7 +42,7 @@ export default function Header({
     <header className={cn("header", className)}>
       <div className="header__wrap">
         <h1 className="header__txt">
-          <Link to="/">PORTFOLIO</Link>
+          <Link to="/gate">PORTFOLIO</Link>
         </h1>
         <div className="header__list">
           <AnimatePresence>

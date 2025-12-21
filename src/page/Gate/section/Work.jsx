@@ -42,7 +42,7 @@ const Work = forwardRef((props, ref) => {
 
           <SwiperSlide className="work-slide__item">
             <div className="work-slide__link">
-              <Link to="/work" className="work-slide__link-wrap">
+              <Link to="/gate/work" className="work-slide__link-wrap">
                 More Project
                 <ArrowIco className="work-slide__ico" />
               </Link>
