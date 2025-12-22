@@ -43,7 +43,12 @@ const About = forwardRef((props, ref) => {
           <div className="about-bottom">
             {props.data.map((item, num) => {
               return (
-                <div className="about-group" key={num}>
+                <div
+                  className={cn("about-group", {
+                    "about-group--colspan": item.colSpan,
+                  })}
+                  key={num}
+                >
                   <strong className="about-group__tit">{item.tit}</strong>
                   <ul className="about-group__list">
                     {item.child.map((childItem, childNum) => {

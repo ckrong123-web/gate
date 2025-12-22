@@ -11,6 +11,7 @@ export default function Card({
   children,
   isClose,
   onClick,
+  isSubPage,
   href = "#",
 }) {
   const ImgCont = (
@@ -42,8 +43,12 @@ export default function Card({
             {num}
           </span>
           <span className="card__tit">
-            Project
-            <br />
+            {!isSubPage && (
+              <>
+                Project
+                <br />
+              </>
+            )}
             {tit}
             <span className="card__ico-box">
               <SparkleIco className="card__ico" />

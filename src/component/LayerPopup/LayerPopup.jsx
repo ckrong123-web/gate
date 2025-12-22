@@ -69,7 +69,11 @@ export default function LayerPopup({
                       </div>
                       {href && (
                         <div className="popup__link-wrap">
-                          <a href={href} className="popup__link">
+                          <a
+                            href={href}
+                            target="_blank"
+                            className="popup__link"
+                          >
                             Go Site
                             <ArrowIco className="popup__link-ico" />
                           </a>

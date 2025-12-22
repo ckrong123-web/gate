@@ -20,16 +20,23 @@ const headerData = [
 // about 리스트
 const aboutData = [
   {
-    tit: "EDUCATION",
+    tit: "EDUCATION & CERTIFICATIONS",
     child: [
       { year: "2018.02", txt: "해송 고등학교 졸업" },
       { year: "2020.02", txt: "신안산 대학교 졸업" },
+      { year: "2020.03", txt: "GTQ 그래픽기술자격 1급 취득" },
+      { year: "2021.07", txt: "웹디자인개발기능사 취득" },
       { year: "2021.10", txt: "그린 컴퓨터 아카데미 디지털디자인 과정 수료" },
     ],
   },
   {
     tit: "EXPERIENCE",
     child: [
+      {
+        year: "2020.05 ~ 2020.11",
+        txt: "SN그래픽스 | 사원",
+        subTxt: "Editional Design",
+      },
       {
         year: "2021.10 ~ 2022.08",
         txt: "이즈디 | 사원",
@@ -42,6 +49,37 @@ const aboutData = [
       },
     ],
     during: true,
+  },
+  {
+    tit: "AWARD-WINNING PROJECTS",
+    child: [
+      {
+        year: "2023",
+        txt: "KRating",
+        subTxt: "금융연계서비스분야 대상",
+      },
+      {
+        year: "2024",
+        txt: "수석문화재단",
+        subTxt: "사회공헌분야 대상",
+      },
+      {
+        year: "2024",
+        txt: "동아쏘시오홀딩스",
+        subTxt: "중견기업-제조분야 최우수상",
+      },
+      {
+        year: "2025",
+        txt: "연세소식",
+        subTxt: "웹진분야 대상",
+      },
+      {
+        year: "2025",
+        txt: "롯데월드 어드벤처",
+        subTxt: "레저/스포츠분야 대상 | 문화/레포츠분야 대상",
+      },
+    ],
+    colSpan: true,
   },
 ];
 

@@ -300,56 +300,6 @@
         }
       }
     }
-
-    &::before {
-      content: "";
-      display: block;
-      width: 2px;
-      height: 60%;
-      position: absolute;
-      top: 55%;
-      left: 3rem;
-      background-color: $color-dark-1;
-      transform: translateY(-50%);
-      opacity: 0;
-      animation: name-txt-line 0.7s 0.4s linear forwards;
-      @keyframes name-txt-line {
-        0% {
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        20% {
-          opacity: 0;
-        }
-        30% {
-          opacity: 1;
-        }
-        40% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        60% {
-          opacity: 0;
-        }
-        70% {
-          opacity: 1;
-        }
-        80% {
-          opacity: 0;
-        }
-        90% {
-          opacity: 1;
-        }
-        to {
-          left: calc(100% - 3rem);
-          opacity: 0;
-        }
-      }
-    }
   }
   @include mix.respond-to("tablet") {
     &__pct {
@@ -358,6 +308,10 @@
     }
     &__txt {
       font-size: 2.8rem;
+      &::after {
+        width: calc(100% - 4rem);
+        right: 2rem;
+      }
     }
   }
   @include mix.respond-to("mobile") {
@@ -368,6 +322,10 @@
     &__txt {
       margin-top: 0.1rem;
       font-size: 1.6rem;
+      &::after {
+        width: calc(100% - 2.5rem);
+        right: 1rem;
+      }
     }
   }
 }
@@ -566,6 +524,7 @@
 
 .about-bottom {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   min-height: 50vh;
   padding: 6rem 0 14rem;
@@ -577,7 +536,24 @@
 }
 
 .about-group {
-  flex-basis: 50%;
+  flex-basis: calc(50% - 1rem);
+
+  &--colspan {
+    flex-basis: calc(100%);
+    .about-item {
+      align-items: center;
+    }
+    .about-item__txt-box {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .about-item__sub-txt {
+      margin-top: 0;
+    }
+  }
 
   &__tit {
     @include mix.en-20($weight: 600);
@@ -597,6 +573,11 @@
     }
   }
   @include mix.respond-to("mobile") {
+    &--colspan {
+      .about-item__txt-box {
+        gap: 1.2rem;
+      }
+    }
     &__list {
       margin-top: 1.6rem;
     }
@@ -608,6 +589,7 @@
         .about-item {
           flex-direction: column;
           gap: 0.8rem;
+          align-items: flex-start;
         }
       }
     }
@@ -647,6 +629,7 @@
       }
     }
     &__sub-txt {
+      font-size: 1.3rem;
       margin-top: 0.4rem;
     }
   }
