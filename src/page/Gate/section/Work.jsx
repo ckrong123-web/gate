@@ -33,6 +33,7 @@ const Work = forwardRef((props, ref) => {
                   tag={item.tag}
                   year={item.year}
                   img={item.img}
+                  href={item.href}
                 >
                   {item.desc}
                 </Card>

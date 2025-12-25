@@ -4,7 +4,7 @@ import Img01 from "@/assets/img/popup/arkworld_001.jpg";
 
 export default function POP_ARKWORLD() {
   return (
-    <LayerPopup title="arkworld" id="pop_arkworld">
+    <LayerPopup title="Arkworld" id="pop_arkworld">
       제작기간 : 1개월
       <br />
       Full page 사용

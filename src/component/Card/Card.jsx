@@ -11,8 +11,7 @@ export default function Card({
   children,
   isClose,
   onClick,
-  isSubPage,
-  href = "#",
+  href,
 }) {
   const ImgCont = (
     <>
@@ -43,12 +42,6 @@ export default function Card({
             {num}
           </span>
           <span className="card__tit">
-            {!isSubPage && (
-              <>
-                Project
-                <br />
-              </>
-            )}
             {tit}
             <span className="card__ico-box">
               <SparkleIco className="card__ico" />
@@ -57,7 +50,9 @@ export default function Card({
         </div>
         <div className="card__img-box">
           {href ? (
-            <a href={href}>{ImgCont}</a>
+            <a href={href} target="_blank">
+              {ImgCont}
+            </a>
           ) : onClick ? (
             <button
               onClick={() => {
@@ -73,7 +68,7 @@ export default function Card({
         <div className="card__txt-box">
           <div className="card__txt-top">
             <span className="card__tag">{tag}</span>
-            <span className="card__year">{year}</span>
+            {year && <span className="card__year">{year}</span>}
           </div>
           <span className="card__desc">{children}</span>
         </div>

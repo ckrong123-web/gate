@@ -8,6 +8,13 @@ import LogoCss from "@/assets/img/css.svg";
 import LogoJs from "@/assets/img/javascript.svg";
 import LogoPug from "@/assets/img/pug.svg";
 import LogoReact from "@/assets/img/react.svg";
+
+import Posco from "@/assets/img/thumb_016.jpg";
+import Suseok from "@/assets/img/thumb_015.png";
+import DongaSocio from "@/assets/img/thumb_017.jpg";
+import Yonsei from "@/assets/img/thumb_024.png";
+import Lotte from "@/assets/img/thumb_023.png";
+
 // 헤더 리스트
 const headerData = [
   { txt: "HOME" },
@@ -114,32 +121,39 @@ const skillData = [
 
 const workData = [
   {
-    tit: "프로젝트1",
-    tag: "Web",
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1762361962969-9e1484e8c8b5?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "프로젝트 설명 설명 ",
+    tit: "롯데월드 차세대",
+    tag: "Responsive Web / App",
+    year: "2025",
+    img: Lotte,
+    href: "https://www.lotteworld.com/",
   },
   {
-    tit: "프로젝트1",
-    tag: "Web",
+    tit: "연세소식",
+    tag: "Responsive Web",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1762361962969-9e1484e8c8b5?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "프로젝트 설명 설명 ",
+    img: Yonsei,
+    href: "https://news.yonsei.ac.kr/",
   },
   {
-    tit: "프로젝트1",
-    tag: "Web",
+    tit: "동아 쏘시오홀딩스",
+    tag: "Responsive Web",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1762361962969-9e1484e8c8b5?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "프로젝트 설명 설명 ",
+    img: DongaSocio,
+    href: "https://www.donga.co.kr/main/main?lang=ko",
   },
   {
-    tit: "프로젝트1",
-    tag: "Web",
+    tit: "수석문화재단",
+    tag: "Responsive Web",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1762361962969-9e1484e8c8b5?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "프로젝트 설명 설명 ",
+    img: Suseok,
+    href: "https://foundation.donga.co.kr/main/main",
+  },
+  {
+    tit: "포스코FLOW 스마트 물류통합 플랫폼",
+    tag: "PC",
+    year: "2023",
+    img: Posco,
+    href: "https://smartportal.poscoflow.com/cpc01p-web-portal/cpc01p0100.html",
   },
 ];
 

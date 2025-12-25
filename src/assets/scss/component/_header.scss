@@ -8,6 +8,8 @@
   top: 0;
   left: 0;
   z-index: 100;
+  background-image: linear-gradient(#fff, transparent);
+  -webkit-backdrop-filter: blur(0.2rem);
   &__wrap {
     display: flex;
     justify-content: space-between;

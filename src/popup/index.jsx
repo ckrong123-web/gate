@@ -4,3 +4,7 @@ export { default as POP_SPEEDFLOOR } from "./POP_SPEEDFLOOR";
 export { default as POP_XCONE } from "./POP_XCONE";
 export { default as POP_ISD } from "./POP_ISD";
 export { default as POP_ARKWORLD } from "./POP_ARKWORLD";
+export { default as POP_ALICECAR } from "./POP_ALICECAR";
+export { default as POP_ALICECAMPING } from "./POP_ALICECAMPING";
+export { default as POP_RICHGOLP } from "./POP_RICHGOLP";
+export { default as POP_DAINRMC } from "./POP_DAINRMC";
