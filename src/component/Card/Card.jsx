@@ -1,5 +1,6 @@
 import { SparkleIco, ArrowIco, PlusIco } from "@/icon";
 import cn from "classnames";
+import { span } from "motion/react-client";
 
 export default function Card({
   className,
@@ -10,6 +11,8 @@ export default function Card({
   year,
   children,
   isClose,
+  isInternal,
+  percent,
   onClick,
   href,
 }) {
@@ -17,7 +20,7 @@ export default function Card({
     <>
       <img src={img} alt={`${tit} 이미지`} className="card__img" />
 
-      {!isClose && href && (
+      {!isClose && !isInternal && href && (
         <span className="card__arrow">
           <ArrowIco className="card__arrow-ico" />
           <span className="hidden">링크로 이동</span>
@@ -30,6 +33,7 @@ export default function Card({
         </span>
       )}
       {isClose && <span className="card__dimm">Not Live</span>}
+      {isInternal && <span className="card__dimm">내부용 시스템입니다.</span>}
     </>
   );
 
@@ -70,7 +74,15 @@ export default function Card({
             <span className="card__tag">{tag}</span>
             {year && <span className="card__year">{year}</span>}
           </div>
-          <span className="card__desc">{children}</span>
+          <div className="card__desc">
+            {percent && (
+              <strong className="card__desc-item">
+                퍼블리싱 참여도 :{" "}
+                <em className="card__desc-percent">{percent}</em>
+              </strong>
+            )}
+            <p className="card__desc-item">{children}</p>
+          </div>
         </div>
       </div>
     </div>

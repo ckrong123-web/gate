@@ -2,7 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
+import initViewportHeight from "./utils/setViewportHeight";
 import "./assets/scss/style.scss";
+
+initViewportHeight();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

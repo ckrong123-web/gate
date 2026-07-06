@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100dvh;
+    min-height: calc(var(--vh, 1vh) * 100);
     position: relative;
     overflow: hidden;
     &::before {
@@ -387,7 +387,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  min-height: 50vh;
+  min-height: calc(var(--vh, 1vh) * 50);
   padding: 14rem 0 6rem;
   border-bottom: 1px solid $color-dark-1;
 
@@ -526,7 +526,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  min-height: 50vh;
+  min-height: calc(var(--vh, 1vh) * 50);
   padding: 6rem 0 14rem;
   @include mix.respond-to("mobile") {
     padding: 4rem 0 7rem;
@@ -639,20 +639,20 @@
 
 .skill {
   &__wrap {
-    height: 350vh;
+    height: calc(var(--vh, 1vh) * 350);
     background-color: $color-light-1;
   }
 
   &__sticky {
     position: sticky;
     top: 0;
-    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100);
     overflow: clip;
     &::before {
       content: "";
       display: block;
       width: 100%;
-      height: 20vh;
+      height: calc(var(--vh, 1vh) * 20);
       background-image: linear-gradient(#f7f8f9, transparent);
       position: absolute;
       top: 0;
@@ -663,7 +663,7 @@
       content: "";
       display: block;
       width: 100%;
-      height: 20vh;
+      height: calc(var(--vh, 1vh) * 20);
       background-image: linear-gradient(transparent, #f7f8f9);
       position: absolute;
       bottom: 0;
@@ -742,7 +742,7 @@
     &__tit {
       // font-size: 1.6rem;
       right: calc(-14rem);
-      top: calc(75rem - 50dvh + 8rem);
+      top: calc(75rem - (var(--vh, 1vh) * 50) + 8rem);
       transform: translateX(50%) translateY(100%);
     }
   }
@@ -839,9 +839,10 @@
 // work
 .work {
   width: 100%;
-  min-height: 100dvh;
+  min-height: calc(var(--vh, 1vh) * 100);
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -863,7 +864,7 @@
     width: calc(100% - 16rem);
     max-width: 140rem;
     margin: 0 auto;
-    padding-top: 8vh;
+    padding-top: calc(var(--vh, 1vh) * 8);
   }
   @include mix.respond-to("tablet") {
     .work__wrap {

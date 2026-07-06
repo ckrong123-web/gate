@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/component";
 import { Main, About, Skill, Work, Contact } from "./section";
 
@@ -157,7 +158,10 @@ const workData = [
   },
 ];
 
+const WORKS_INDEX = 3;
+
 function Gate() {
+  const navigate = useNavigate();
   const sectionRefs = useRef([]);
 
   const setRef = (sec, index) => {
@@ -184,6 +188,11 @@ function Gate() {
   }, []);
 
   const scrTo = (index) => {
+    if (index === WORKS_INDEX) {
+      navigate("/gate/work");
+      return;
+    }
+
     const lastSec = index === sectionRefs.current.length - 1;
     if (lastSec) {
       window.scrollTo({

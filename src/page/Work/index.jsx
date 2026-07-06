@@ -39,6 +39,11 @@ import BGSS from "@/assets/img/thumb_022.png";
 import Lotte from "@/assets/img/thumb_023.png";
 import Yonsei from "@/assets/img/thumb_024.png";
 import ReactGuide from "@/assets/img/thumb_025.png";
+import Ibk from "@/assets/img/thumb_026.png";
+import Bccard from "@/assets/img/thumb_027.png";
+import Skb from "@/assets/img/thumb_028.jpg";
+import Decimone from "@/assets/img/thumb_029.png";
+import Claude from "@/assets/img/thumb_030.jpg";
 
 // 헤더 리스트
 const headerData = [
@@ -51,13 +56,62 @@ const headerData = [
 
 const workData = [
   {
+    tit: "AI 활용 스터디",
+    tag: "Study / Vibe coding",
+    img: Claude,
+    desc: "디자인 - stitch / 기디퍼 - Claude 활용",
+    href: "https://ckrong123-web.github.io/mywork/",
+    percent: "100%",
+    type: [1, 5],
+  },
+  {
+    tit: "드시모네몰 리뉴얼 2차",
+    tag: "Mo Web",
+    year: "2026.06 ~ 2026.07",
+    img: Decimone,
+    desc: "VUE 및 Claude Code 환경 퍼블리싱 파트 참여 / 바이브 코딩 활용",
+    percent: "15%",
+    type: [1, 2],
+  },
+  {
+    tit: "skb 통합진단툴 UI/UX 개선 및 고도화",
+    tag: "Dashboard",
+    year: "2026.04 ~ 2026.05",
+    img: Skb,
+    desc: "React 기반 대시보드 화면 개발 / 차트 커스텀 / 퍼블리싱 파트 참여",
+    isInternal: true,
+    percent: "50%",
+    type: [1, 2],
+  },
+  {
+    tit: "비씨카드 법인",
+    tag: "Responsive Web",
+    year: "2025.12 ~ 2026.03",
+    img: Bccard,
+    desc: "법인카드 서비스 안내 웹사이트 / 퍼블리싱 참여",
+    href: "https://corp.bccard.com/app/wisebiz/",
+    percent: "45%",
+    type: [1, 3],
+  },
+  {
+    tit: "IBK 자동화 솔루션 개발",
+    tag: "Dashboard",
+    year: "2025.11 ~ 2025.12",
+    img: Ibk,
+    desc: "AI 기반 자동화 솔루션 개발 / 대시보드형 / 바이브 코딩을 활용한 프론트 개발자와 협업 / 퍼블리싱 참여",
+    href: "https://frameout.co.kr/works/ai-ibk",
+    percent: "100%",
+    type: [1, 2],
+  },
+  {
     tit: "롯데월드 차세대",
     tag: "Responsive Web / App",
     year: "2024.11 ~ 2025.09",
     img: Lotte,
     desc: "다국어프로젝트 / 퍼블리싱 참여 / AWARD-WINNING - 레저/스포츠분야 대상 | 문화/레포츠분야 대상",
     href: "https://www.lotteworld.com/",
-    type: [1, 2],
+    percent: "25%",
+    type: [1, 2, 3],
   },
   {
     tit: "연세소식",
@@ -66,6 +120,7 @@ const workData = [
     img: Yonsei,
     desc: "퍼블리싱 단독 수행 / AWARD-WINNING - 웹진분야 대상",
     href: "https://news.yonsei.ac.kr/",
+    percent: "100%",
     type: [2],
   },
   {
@@ -74,6 +129,7 @@ const workData = [
     img: ReactGuide,
     desc: "리액트(NEXT & TypeScript) 기반 컴포넌트 가이드",
     href: "https://ckrong123-web.github.io/next-component/",
+    percent: "100%",
     type: [4],
   },
   {
@@ -83,6 +139,7 @@ const workData = [
     img: BGSS,
     desc: "다국어프로젝트 / 퍼블리싱 참여",
     href: "https://iloveeye.com/index.do",
+    percent: "18%",
     type: [1],
   },
   {
@@ -92,6 +149,7 @@ const workData = [
     img: Mirae,
     desc: "교과서 / 퍼블리싱 참여",
     href: "https://m.m-teacher.co.kr/pages/high/bbs/list.mrn/TBM-m5qjheyn-46G0J1g8Uj",
+    percent: "25%",
     type: [1],
   },
   {
@@ -101,6 +159,7 @@ const workData = [
     img: DongaHr,
     desc: "채용 사이트 / 퍼블리싱 참여",
     href: "https://talent.dongasocio.com/kr/main",
+    percent: "25%",
     type: [2],
   },
   {
@@ -109,6 +168,7 @@ const workData = [
     year: "2024.02",
     img: JB,
     desc: "퍼블리싱 참여",
+    percent: "10%",
     type: [1],
   },
   {
@@ -118,6 +178,7 @@ const workData = [
     img: Chammed,
     desc: "영문 다국어 작업 / 퍼블리싱 참여",
     href: "https://www.donga-chammed.com/en/main",
+    percent: "100%",
     type: [2],
   },
   {
@@ -127,6 +188,7 @@ const workData = [
     img: DongaSocio,
     desc: "기업 소개 웹 사이트 / 퍼블리싱 참여 / AWARD-WINNING - 중견기업-제조분야 최우수상",
     href: "https://www.donga.co.kr/main/main?lang=ko",
+    percent: "30%",
     type: [2],
   },
   {
@@ -136,6 +198,7 @@ const workData = [
     img: Suseok,
     desc: "재단 소개 웹 사이트 / 퍼블리싱 참여 / AWARD-WINNING - 사회공헌분야 대상",
     href: "https://foundation.donga.co.kr/main/main",
+    percent: "100%",
     type: [2],
   },
   {
@@ -145,6 +208,7 @@ const workData = [
     img: Posco,
     desc: "IBSheet 사용(그리드 시스템) / 퍼블리싱 참여",
     href: "https://smartportal.poscoflow.com/cpc01p-web-portal/cpc01p0100.html",
+    percent: "50%",
     type: [1],
   },
   {
@@ -154,6 +218,7 @@ const workData = [
     img: KRating,
     desc: "웹 접근성 프로젝트 / 퍼블리싱 참여 / AWARD-WINNING - 금융연계서비스분야 대상",
     href: "https://www.krating.co.kr/main.do",
+    percent: "7%",
     type: [1],
   },
   {
@@ -163,6 +228,7 @@ const workData = [
     img: NowEat,
     desc: "음악 교육 플랫폼 웹사이트 / 퍼블리싱 단독 수행",
     href: "https://www.noweatmusic.com/",
+    percent: "100%",
     type: [2],
   },
   {
@@ -172,6 +238,7 @@ const workData = [
     img: DainRmc,
     desc: "건설 및 부동산 기업 브랜드 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행",
     openId: "pop_dainrmc",
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -181,6 +248,7 @@ const workData = [
     img: Sodam,
     desc: "목재 쇼핑몰 / 퍼블리싱 참여",
     href: "https://sodamdiy.co.kr/",
+    percent: "100%",
     type: [2],
   },
   {
@@ -191,6 +259,7 @@ const workData = [
     desc: "골프 학원 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행",
     isClose: true,
     openId: "pop_richgolp",
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -200,6 +269,7 @@ const workData = [
     img: Thelogy,
     desc: "학회 웹사이트 / 퍼블리싱 참여",
     href: "https://xn--vb0bj78a2b13ju10b.kr/",
+    percent: "80%",
     type: [2, 3],
   },
   {
@@ -210,6 +280,7 @@ const workData = [
     desc: "캠핑장 안내 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행",
     isClose: true,
     openId: "pop_alicecamping",
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -219,6 +290,7 @@ const workData = [
     img: AliceCar,
     desc: "렌터카 기업 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행",
     openId: "pop_alicecar",
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -228,6 +300,7 @@ const workData = [
     img: Repai,
     desc: "쇼핑몰 / 퍼블리싱 단독 수행 ",
     isClose: true,
+    percent: "100%",
     type: [1],
   },
   {
@@ -237,6 +310,7 @@ const workData = [
     img: Arkworld,
     desc: "홍보 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행 ",
     openId: "pop_arkworld",
+    percent: "100%",
     isClose: true,
     type: [2, 3],
   },
@@ -248,6 +322,7 @@ const workData = [
     desc: "자사 홈페이지 메인 리뉴얼 / UI 디자인 및 퍼블리싱 단독 수행 ",
     openId: "pop_isd",
     isClose: true,
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -258,6 +333,7 @@ const workData = [
     desc: "미디어 제작 자회사 브랜드 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행 ",
     openId: "pop_xcone",
     isClose: true,
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -268,6 +344,7 @@ const workData = [
     desc: "화물 차량 판매 기업 브랜드 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행 ",
     openId: "pop_speedfloor",
     isClose: true,
+    percent: "100%",
     type: [2, 3],
   },
   {
@@ -277,6 +354,7 @@ const workData = [
     img: Hansung,
     desc: "건설 기업 브랜드 웹사이트 / UI 디자인 및 퍼블리싱 단독 수행",
     openId: "pop_hansung",
+    percent: "100%",
     type: [2, 3],
   },
   // {
@@ -332,6 +410,8 @@ export default function index() {
                             },
                           })}
                       isClose={item.isClose}
+                      isInternal={item.isInternal}
+                      percent={item.percent}
                       isSubPage
                     >
                       {item.desc}
