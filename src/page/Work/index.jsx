@@ -69,7 +69,7 @@ const workData = [
     tag: "Mo Web",
     year: "2026.06 ~ 2026.07",
     img: Decimone,
-    desc: "VUE 및 Claude Code 환경 퍼블리싱 파트 참여 / 바이브 코딩 활용",
+    desc: "VUE 및 Claude Code 환경 퍼블리싱 파트 참여",
     percent: "15%",
     type: [1, 2],
   },
